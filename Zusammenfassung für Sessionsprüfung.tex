@@ -1130,6 +1130,31 @@ Vorgehen:
 \]
 \renewcommand*{\arraystretch}{1}
 
+\subsection{Weitere Integrale}
+\[
+\begin{array}{rcll}
+\int a\ dx & = & ax & \\
+\int x^a\ dx & = & \frac{1}{a+1} x^{a+1} , & a \neq -1 \\
+\int (ax+b)^c\ dx & = & \frac{1}{a(c+1)}(ax+b)^{c+1}, & c \neq -1 \\
+\int \frac{1}{x}\ dx & = & \log\left|x\right|, & x\neq 0 \\
+\int \frac{1}{ax+b}\ dx & = & \frac{1}{a} \log\left|ax+b\right| & \\
+\int \frac{1}{x^2+a^2}\ dx & = & \frac{1}{a}\arctan\frac{x}{a} & \\
+%
+% EXPONENTIAL
+%
+\int e^{ax}\ dx & = & \frac{1}{a}e^{ax} & \\
+\int x e^{ax}\ dx & = & \frac{e^{ax}}{a^2}(ax-1) & \\
+\int x^2 e^{ax}\ dx & = & e^{ax}\left(\frac{x^2}{a}-\frac{2x}{a^2}+\frac{2}{a^3}\right) & \\
+%
+% LOGARITHMUS
+%
+\int \log\left|x\right|\ dx & = & x(\log\left|x\right| - 1) & \\
+\int \log_a\left|x\right|\ dx & = & x(\log_a\left|x\right|-\log_a e) & \\
+\int x^a \log x\ dx & = & \frac{x^{a+1}}{a+1}\left(\log x - \frac{1}{a+1}\right), & a\neq-1,x>0 \\
+\int \frac{1}{x}\log x\ dx & = & \frac{1}{2}\log^2 x, & x>0 \\
+\end{array}
+\]
+
 \section{Verschiedenes}
 \textbf{Binomialkoeffizient} \\
 Der Binomialkoeffizient
