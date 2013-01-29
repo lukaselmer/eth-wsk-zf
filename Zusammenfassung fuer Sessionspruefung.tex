@@ -876,8 +876,7 @@ Regeln zum Auslesen der Werte:
 \end{itemize}
 
 \subsection{Pareto-Verteilung}
-Die Pareto-Verteilung, ist eine stetige Wahrscheinlichkeitsverteilung auf einem rechtsseitigen unendlichen Intervall $[x_0, \infty)$.\\
-Eine stetige Zufallsvariable X heisst pareto-verteilt $Par(\alpha, x_0)$ mit den Parametern $\alpha > 0$ und $x_0 > 0$, mit folgenden Eigenschaften:
+Die Pareto-Verteilung, ist eine stetige Wahrscheinlichkeitsverteilung auf einem rechtsseitigen unendlichen Intervall $[x_0, \infty)$. Eine stetige Zufallsvariable $X$ heisst pareto-verteilt $Par(\alpha, x_0)$ mit den Parametern $\alpha > 0$ und $x_0 > 0$, mit folgenden Eigenschaften:
 
 \vspace{10pt}
 
@@ -888,7 +887,7 @@ X \sim Par(\alpha, x_0)
 
 Dichtefunktion:
 \[
-f_X(x) =\begin{cases}
+f(x) =\begin{cases}
 			\dfrac{\alpha}{x_0}\left(\dfrac{x_0}{x}\right)^{\alpha + 1} & x \geq x_0\\
 			0 & x < x_0
 		\end{cases}
@@ -896,7 +895,7 @@ f_X(x) =\begin{cases}
 
 Verteilungsfunktion:
 \[
-F_X(x; x_0, \alpha) = \begin{cases}
+F(x; x_0, \alpha) = \begin{cases}
 			1 - \left(\dfrac{x}{x_0}\right)^{-\alpha} & x \geq x_0, \alpha > 0,\\
 			0 & \text{sonst}
 		\end{cases}
@@ -923,7 +922,8 @@ Standardabweichung:
 \[
 sd[X]=\dfrac{x_0}{\alpha - 1}\sqrt{\dfrac{\alpha}{\alpha - 2}} \text{ für } \alpha > 2
 \]
-Die Verteilung wurde zunächst zur Beschreibung der Einkommensverteilung Italiens verwendet. Paretoverteilungen finden sich charakteristischerweise dann, wenn sich zufällige, positive Werte über mehrere Größenordnungen erstrecken und durch das Einwirken vieler unabhängiger Faktoren zustande kommen.
+
+\textbf{Beispiel:} Die Verteilung wurde zunächst zur Beschreibung der Einkommensverteilung Italiens verwendet. Paretoverteilungen finden sich charakteristischerweise dann, wenn sich zufällige, positive Werte über mehrere Größenordnungen erstrecken und durch das Einwirken vieler unabhängiger Faktoren zustande kommen.
 
 \section{Grenzwertsätze}
 In vielen Situationen taucht die Summe von \emph{vielen gleichartigen Zufallsvariablen} auf. Wir möchten wissen, wie sich diese Summe etwa verhält, und untersuchen deshalb ihre Asymptotik, wenn die Anzahl der Summanden gegen unendlich geht.
