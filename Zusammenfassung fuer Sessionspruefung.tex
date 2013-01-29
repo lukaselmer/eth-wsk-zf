@@ -445,10 +445,7 @@ Varianz:
 Var[X]=p(1-p)
 \]
 
-Standardabweichung:
-\[
-sd[X]=\sqrt{Var[X]}=\sqrt{np(1-p)}
-\]
+\textbf{Beispiel (Münzwurf):} Ein fairer Münzwurf ist bernoulliverteilt mit Parameter $p=\frac{1}{2}$. Für einen Parameter $p\neq\frac{1}{2}$ wäre der Münzwurf unfair.
 
 \subsection{Binomial-Verteilung}
 Beschreibt die Anzahl der Erfolge in einer Serie von \emph{gleichartigen} und \emph{unabhängigen} Versuchen, die jeweils genau zwei mögliche Ergebnisse haben (''Erfolg'' oder ''Misserfolg''). $n$ ist die Anzahl der Versuche bzw. Wiederholungen, $p$ ist die Wahrscheinlichkeit für einen "Erfolg".
@@ -494,11 +491,6 @@ Varianz:
 Var[X]=np(1-p)
 \]
 
-Standardabweichung:
-\[
-sd[X]=\sqrt{Var[X]}=\sqrt{np(1-p)}
-\]
-
 \textbf{Bemerkungen:}
 \begin{itemize}
 \item Die Binomialverteilung $Bin(n,p)$ darf für grosse $n$ und kleine $p$ näherungsweise durch die Poisson-Verteilung mit Parameter $\lambda = np$ ersetzt werden (Faustregel: $np<10$ und $n>1500p$).
@@ -536,11 +528,6 @@ Varianz:
 Var[X]=\frac{1-p}{p^2}
 \]
 
-Standardabweichung:
-\[
-sd[X]=\sqrt{Var[X]}=\sqrt{\frac{1-p}{p^2}}
-\]
-
 \textbf{Beispiel:} Wartezeit auf Kopf bei wiederholtem Münzwurf
 
 \subsection{Poisson-Verteilung}
@@ -573,17 +560,12 @@ Varianz:
 Var[X]=\lambda
 \]
 
-Standardabweichung:
-\[
-sd[X]=\sqrt{Var[X]}=\sqrt{\lambda}
-\]
-
 \textbf{Bemerkungen}
 \begin{itemize}
 \item Falls $Z=X+Y$ und $X\sim Pois(\lambda)$, $Y\sim Pois(\mu)$ dann gilt $Z\sim Pois(\lambda+\mu)$.
 \end{itemize}
 
-\textbf{Beispiel:} Anzahl eingehender Druckaufträge in n = 3600 Sekunden mit einer Jobwahrscheinlichkeit von p = 1\% pro Sekunde, wenn pro Sekunde maximal ein Job eintreffen kann.
+\textbf{Beispiel:} Anzahl eingehender Druckaufträge in $n=3600$ Sekunden mit einer Jobwahrscheinlichkeit von $p=1\%$ pro Sekunde, wenn pro Sekunde maximal ein Job eintreffen kann.
 
 \subsection{Negativbinomiale Verteilung}
 Wartezeit auf den $r$-ten Erfolg bei einer Folge von unabhängigen 0-1-Experimenten mit Erfolgsparameter $p$.
@@ -624,15 +606,10 @@ Varianz:
 Var[X]=\frac{r(1-p)}{p^2}
 \]
 
-Standardabweichung:
-\[
-sd[X]=\sqrt{Var[X]}=\sqrt{\frac{r(1-p)}{p^2}}
-\]
-
 \textbf{Beispiel:} Wartezeit auf dritten Kopf beim wiederholten Münzwurf
 
 \subsection{Hypergeometrische Verteilung}
-Beim Ziehen von $m$ Gegenständen \emph{ohne Zurücklegen} aus einer Urne mit $n$ Gegenständen, wovon $r$ vom Typ 1 und $n-r$ vom Typ 2 sind.
+Urnenmodell für Ziehen ohne Zurücklegen. In einer Urne befinden sich $n$ Gegenstände. Davon sind $r$ Gegenstände vom Typ A und $n-r$ Gegenstände vom Typ B. Es werden $m$ Gegenstände ohne Zurücklegen gezogen. $X$ beschreibt die Wahrscheinlichkeitsverteilung für die Anzahl $k$ der Gegenstände vom Typ A in der Stichprobe.
 
 \vspace{10pt}
 
@@ -696,12 +673,30 @@ Varianz:
 Var[X]=\frac{mr}{n^2(n-1)}(n-r)(n-m)
 \]
 
-Standardabweichung:
+\textbf{Beispiel (Lotto):} Anzahl Zahlen $n=45$, richtige Zahlen $r=6$, meine Zahlen $m=6$. Die Wahrscheinlichkeit für $4$ Richtige ist
 \[
-sd[X]=\sqrt{Var[X]}=\sqrt{\frac{mr}{n^2(n-1)}(n-r)(n-m)}
+f(4)=\frac{
+	\left(
+	\begin{array}{c}
+		6 \\
+		4 \\
+	\end{array}
+	\right)
+	\left(
+	\begin{array}{c}
+		39 \\
+		2 \\
+	\end{array}
+	\right)
+}{
+	\left(
+	\begin{array}{c}
+		35 \\
+		6 \\
+	\end{array}
+	\right)
+}\approx 0.00136
 \]
-
-\textbf{Beispiel:} Lotto, 6 aus 49 mit n = 49, r = 6 und m = 6
 
 \section{Stetige Verteilungen}
 
@@ -744,11 +739,6 @@ Varianz:
 Var[X]=\frac{(b-a)^2}{12}
 \]
 
-Standardabweichung:
-\[
-sd[X]=\sqrt{Var[X]}=\sqrt{\frac{(b-a)^2}{12}}
-\]
-
 \subsection{Exponentialverteilung}
 Die Exponentialverteilung ist ein Modell für Wartezeiten und Lebensdauern. Beispielanwendungen sind die Berechnung der Lebensdauer von Bauteilen und Zugverspätungen.
 
@@ -787,17 +777,14 @@ Varianz:
 Var[X]=\frac{1}{\lambda^{2}}
 \]
 
-Standardabweichung:
-\[
-sd[X]=\sqrt{Var[X]}=\sqrt{\frac{1}{\lambda^{2}}}
-\]
-
 \textbf{Bemerkungen:}
 \begin{itemize}
 \item Sind $X_1\sim Exp(\lambda_1), ..., X_n\sim Exp(\lambda_n)$ \emph{stochastisch unabhängig}, so ist $\min(X_1, ...,X_n)\sim Exp(\lambda_1+...+\lambda_n)$.
 \item Die Summe von $n$ exponentialverteilten Zufallsvariablen mit \emph{gleichem Parameter} $\lambda$ ist gammaverteilt mit $\Gamma(n,\lambda)$.
 \item Erwartungswert und Standardabweichung sind gleich ($E[X]=sd[X]$).
 \end{itemize}
+
+\textbf{Beispiel (Lebensdauer:)} Die Exponentialverteilung ist eine typische Lebensdauerverteilung. So ist z.B. die Lebensdauer von elektronischen Bauteilen häufig annähernd exponentialverteilt.
 
 \subsection{Normalverteilung}
 Die besondere Bedeutung der Normalverteilung beruht unter anderem auf dem zentralen Grenzwertsatz, der besagt, dass eine Summe von $n$ unabhängigen, identisch verteilten Zufallsvariablen mit endlicher Varianz im Grenzwert $n\rightarrow\infty$ normalverteilt ist.
@@ -829,17 +816,12 @@ Varianz:
 Var[X]=\sigma^2
 \]
 
-Standardabweichung:
-\[
-sd[X]=\sqrt{Var[X]}=\sqrt{\sigma^2}
-\]
-
 Transformation einer normalverteilten Zufallsvariable $X$ in eine standardnormalverteilte Zufallsvariable $Z$:
 \[
 Z=\frac{X-\mu}{\sigma}
 \]
 
-\textbf{Beispiel:} Gewicht von Kürbissen, Streuung von Messungen um den Mittelwert, Gewichte oder Größen von Individuen in einer großen Bevölkerung.
+\textbf{Beispiel:} Gewicht von Kürbissen, Streuung von Messungen um den Mittelwert, Gewichte oder Grössen von Individuen in einer großen Bevölkerung.
 
 \subsection{Standardnormalverteilung}
 Notation:
@@ -865,11 +847,6 @@ E[X]=0
 Varianz:
 \[
 Var[X]=1
-\]
-
-Standardabweichung:
-\[
-sd[X]=\sqrt{Var[X]}=\sqrt{1}
 \]
 
 \textbf{Bemerkungen:}
@@ -1004,9 +981,9 @@ E_\vartheta [T] = \vartheta
 \]
 
 \subsubsection{Konsistenter Schätzer}
-Ein Folge von Schätzern $T^{(n)}$ ist \emph{konsistent} wenn diese mit zunehmendem Stichprobenumfang $n$ gegen den gesuchten Parameter $\vartheta$ konvergiert (gemäss Chebyshev, schwaches Gesetz der grossen Zahlen):
+Ein Folge von Schätzern $T^{(n)}$ ist \emph{konsistent} wenn diese mit zunehmendem Stichprobenumfang $n$ gegen den gesuchten Parameter $\vartheta$ konvergiert:
 \[
-\lim_{n\to\infty}P_{\vartheta}\left[|T^{(n)}-\vartheta| > \epsilon\right]  \leq \frac{Var[T^{(n)}]}{\epsilon^2} = 0\text{ (für jedes $\epsilon > 0$)}
+\lim_{n\to\infty}P_{\vartheta}\left[|T^{(n)}-\vartheta| > \epsilon\right] = 0\text{ (für jedes $\epsilon > 0$)}
 \]
 
 \subsubsection{Momenten-Methode}
