@@ -1006,7 +1006,7 @@ E_\vartheta [T] = \vartheta
 \subsubsection{Konsistenter Schätzer}
 Ein Folge von Schätzern $T^{(n)}$ ist \emph{konsistent} wenn diese mit zunehmendem Stichprobenumfang $n$ gegen den gesuchten Parameter $\vartheta$ konvergiert (gemäss Chebyshev, schwaches Gesetz der grossen Zahlen):
 \[
-\lim_{n\to\infty}P_{\vartheta}\left[|T^{(n)}-\vartheta| > \epsilon\right] = 0\text{ (für jedes $\epsilon > 0$)}
+\lim_{n\to\infty}P_{\vartheta}\left[|T^{(n)}-\vartheta| > \epsilon\right]  \leq \frac{Var[T^{(n)}]}{\epsilon^2} = 0\text{ (für jedes $\epsilon > 0$)}
 \]
 
 \subsubsection{Momenten-Methode}
