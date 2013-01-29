@@ -901,6 +901,9 @@ Regeln zum Auslesen der Werte:
 \subsection{Pareto-Verteilung}
 Die Pareto-Verteilung, ist eine stetige Wahrscheinlichkeitsverteilung auf einem rechtsseitigen unendlichen Intervall $[x_0, \infty)$.\\
 Eine stetige Zufallsvariable X heisst pareto-verteilt $Par(\alpha, x_0)$ mit den Parametern $\alpha > 0$ und $x_0 > 0$, mit folgenden Eigenschaften:
+
+\vspace{10pt}
+
 Notation:
 \[
 X \sim Par(\alpha, x_0)
@@ -1013,8 +1016,14 @@ Sei $X_1,X_2,...,X_n$ eine Stichprobe vom Umfang $n$ mit gegebener Verteilung $t
 
 \textbf{Vorgehen:}
 \begin{enumerate}
-\item 1. Moment berechnen: $\overline{x} = \frac{1}{n}\sum\limits_{i=1}^{n}x_i$
-\item 2. Moment berechnen: $s^2 = \frac{1}{n}\sum\limits_{i=1}^{n}\left(x_i - \overline{x}\right)^2$
+\item 1. Moment berechnen:
+\[
+\overline{x} = \frac{1}{n}\sum\limits_{i=1}^{n}x_i
+\]
+\item 2. Moment berechnen:
+\[
+s^2 = \frac{1}{n}\sum\limits_{i=1}^{n}\left(x_i - \overline{x}\right)^2=\left( \frac{1}{n}\sum\limits_{i=1}^{n}x_i^2\right)-\overline{x}^2
+\]
 \item Nimm die Formel für den Erwartungswert der geg. Verteilung $t$ und setze sie gleich $\overline{x}$
 \item Nimm die Formel für die Varianz der geg. Verteilung $t$ und setze sie gleich $s^2$
 \item Löse das Gleichungssystem auf. Du erhälst die gesuchten Parameter.
@@ -1027,8 +1036,14 @@ Methode zur systematischen Gewinnung von Schätzfunktionen.
 
 \textbf{Vorgehen:}
 \begin{enumerate}
-\item Likelihood-Funktion $L(x_1,...,x_n,\vartheta)= \prod \limits_{i=1}^{n} f(x_i,\vartheta)$ aufstellen
-\item Log-Likelihood-Funktion $\log L(x_1,...,x_n,\vartheta)$ aufstellen (logarithmieren von $L$)
+\item Likelihood-Funktion aufstellen:
+\[
+L(x_1,...,x_n,\vartheta)= \prod \limits_{i=1}^{n} f(x_i,\vartheta)
+\]
+\item Log-Likelihood-Funktion aufstellen (logarithmieren von $L$):
+\[
+\log L(x_1,...,x_n,\vartheta)
+\]
 \item $\log L$ mit Hilfe elementarer Logarithmenregeln möglichst vereinfachen
 \item $\log L$ nach jedem unbekannten Parameter partiell ableiten
 \item Partielle Ableitungen = 0 setzen
@@ -1319,6 +1334,12 @@ Für $k>n$ ist der Binomialkoeffizient stets $0$.
 \]
 
 \vspace{10pt}
+
+\textbf{Mitternachtsformel} \\
+Formel zum Auflösen von allgemeinen quadratischen Gleichungen der Form $ax^2+bx+c=0$:
+\[
+x_{1,2} = \frac{-b\pm\sqrt{b^2-4ac}}{2a} 
+\]
 
 \textbf{Produkteformeln}
 \[
