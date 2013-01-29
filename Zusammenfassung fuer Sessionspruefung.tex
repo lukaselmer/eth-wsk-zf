@@ -217,7 +217,28 @@ F(x) = P[X \leq x] = \int\limits_{-\infty}^{x}f(u)du
 \end{itemize}
 
 \subsection{Gemeinsame Verteilungen}
-...
+
+\textbf{Gemeinsame Verteilungsfunktion:} Die gemeinsame Verteilungsfunktion von $n$ Zufallsvariablen $X_1,...,X_n$ ist die Abbildung $F:\mathbb{R}^n\rightarrow [0,1]$,
+\[
+F(t_1,...,t_n):=P[X_1\leq t_1,...,X_n\leq t_n]
+\]
+
+\textbf{Gemeinsame Gewichtsfunktion:} Falls $X_1,...,X_n$ \emph{diskrete} Zufallsvariablen sind, ist ihre gemeinsame Gewichtsfunktion $p:\mathbb{R}^n\rightarrow [0,1]$ definiert durch
+\[
+p(x_1,...,x_n):=P[X_1=x_1,...,X_n=x_n]
+\]
+
+\textbf{Gemeinsame Dichte:} Seien $X_1,...,X_n$ \emph{stetige} Zufallsvariablen mit gemeinsamer Verteilungsfunktion $F(t_1,...,t_n)$. Die Funktion $f:\mathbb{R}^n\rightarrow [0,\infty)$ heisst \emph{gemeinsame Dichte} von $X_1,...,X_n$, falls für alle $t_i\in\mathbb{R}$ gilt
+\[
+F(t_1,...,t_n)=\int\limits_{-\infty}^{t_1}...\int\limits_{-\infty}^{t_n}f(x_1,...,x_n)\ dx_n...dx_1
+\]
+
+\
+
+Randverteilung im diskreten Fall:
+\[
+P[X=x]=\sum\limits_{i=1}^{n}P[X=x,Y=y_i]=\sum\limits_{i=1}^{n}p(x,y_i)
+\]
 
 \subsection{Funktionen diskreter Zufallsvariablen}
 
@@ -590,6 +611,10 @@ sd[X]=\sqrt{Var[X]}=\sqrt{\frac{r(1-p)}{p^2}}
 \]
 
 \subsection{Hypergeometrische Verteilung}
+Beim Ziehen von $m$ Gegenständen \emph{ohne Zurücklegen} aus einer Urne mit $n$ Gegenständen, wovon $r$ vom Typ 1 und $n-r$ vom Typ 2 sind.
+
+\vspace{10pt}
+
 Notation:
 \[
 X \sim HypGeom(n,m,r)
@@ -964,7 +989,7 @@ Methode zur systematischen Gewinnung von Schätzfunktionen.
 \end{enumerate}
 
 \subsubsection{z-Test}
-Der z-Test ist ein Test für den Erwartungswert bei \emph{bekannter} Varianz $\sigma^2$. Es seien also $X_1,X_2,...,X_n \sim N(\vartheta,\sigma^2) i.i.d.$. Wir wollen die Nullhypothese $\vartheta=\vartheta_0$ testen.
+Der z-Test ist ein Test für den Erwartungswert bei \emph{bekannter} Varianz $\sigma^2$. Es seien also $X_1,X_2,...,X_n \sim N(\vartheta,\sigma^2)\ i.i.d.$. Wir wollen die Nullhypothese $\vartheta=\vartheta_0$ testen.
 
 \[
 \begin{array}{ll}
