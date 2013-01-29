@@ -236,11 +236,22 @@ p(x_1,...,x_n):=P[X_1=x_1,...,X_n=x_n]
 F(t_1,...,t_n)=\int\limits_{-\infty}^{t_1}...\int\limits_{-\infty}^{t_n}f(x_1,...,x_n)\ dx_n...dx_1
 \]
 
-\
+\subsubsection{Randverteilungen}
 
 Randverteilung im diskreten Fall:
 \[
 P[X=x]=\sum\limits_{i=1}^{n}P[X=x,Y=y_i]=\sum\limits_{i=1}^{n}p(x,y_i)
+\]
+
+\subsubsection{Bedingte Verteilung}
+\textbf{Bedingte Gewichtsfunktion:} Seien $X$ und $Y$ \emph{diskrete} Zufallsvariablen mit gemeinsamer Gewichtsfunktion $f_{XY}(x,y)$, dann ist die bedingte Gewichtsfunktion $f_{X|Y}(x|y)$ von $X$ gegeben $Y$ definiert durch
+\[
+f_{X|Y}(x|y)=P[X=x|Y=y]=\frac{f_{XY}(x,y)}{f_Y(y)}
+\]
+
+\textbf{Bedingte Dichte:} Für zwei \emph{stetige} Zufallsvariablen $X$ und $Y$ mit gemeinsamer Dichte $f_{XY}(x,y)$ ist die bedingte Dichte $f_{X|Y}$ von $X$ gegeben $Y$ definiert durch
+\[
+f_{X|Y}(x|y)=\frac{f_{XY}(x,y)}{f_Y(y)}
 \]
 
 \subsection{Funktionen diskreter Zufallsvariablen}
