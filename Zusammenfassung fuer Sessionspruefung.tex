@@ -1115,6 +1115,23 @@ Der t-Test ist ein Test für den Erwartungswert bei \emph{unbekannter Varianz} $
 
 Die Teststatistik $T$ ist \textbf{t-verteilt} mit \textbf{$n-1$ Freiheitsgraden}. Der kritische Bereich lässt sich analog zum z-Test mit den Quantilen der $t_{n-1}$-Verteilung bestimmen.
 
+\subsubsection{Likelihood-Quotienten-Test}
+Der Likelihood-Quotienten-Test kann man verwenden, um eine geeignete Teststatistik $T$ zu erhalten. 
+
+\vspace{10pt}
+
+\textbf{Vorgehen:}
+\begin{enumerate}
+\item Verallgemeinerter Likelihood-Quotient aufstellen:
+\[
+R(x_1,x_2,...,x_n;\vartheta_0,\vartheta_A):=\frac{L(x_1,x_2,...,x_n;\vartheta_0)}{L(x_1,x_2,...,x_n;\vartheta_A)}
+\]
+\item Formel vereinfachen. Im Exponent muss eine Summenformel stehen.
+\item Überlegen, welcher Wert grösser ist, $\vartheta_0$ oder $\vartheta_A$?                  
+\end{enumerate}
+
+Ist dieser Quotient klein, sind die Beobachtungen für die Alternativhypothese deutlich wahrscheinlicher als für die Nullhypothese. Der Verwerfungsbereich $K:=[0,c)$ wird so gewählt, dass der Test das gewünschte Signifikanzniveau einhält.
+
 \subsubsection{Ungepaarter Zweistichproben-z-Test}
 Seien $X_1,X_2,...,X_n \sim N(\mu_X,\sigma^2)$ und $Y_1,Y_2,...,Y_n \sim N(\mu_Y,\sigma^2)$ zwei Stichproben mit $m = n$ oder $m \neq n$. Die Erwartungswerte $\mu_X$ und $\mu_Y$ seien unbekannt, die Varianz $\sigma^2$ sei \emph{bekannt}. Der Test kann wie ein normaler z-Test durchgeführt werden, als Teststatistik $T$ wird jedoch folgende Formel verwendet:
 \[
@@ -1386,6 +1403,37 @@ Ein Waschmittelhersteller bringt 5kg-Packungen in den Umlauf. Die Konsumentensch
 \item $T_1 = \frac{\overline{X}-\mu_0}{S/\sqrt{n}} = -1.581$. Wir ermitteln das t-Quantil für $n-1 = 24$ Freiheitsgrade und $t^{-1}(\alpha) = t^{-1}(0.05) = t^{-1}(0.95) = 1.711$. Somit erhalten wir eine kritische Grenze von $c = -1.711$. Weil $T_1 = -1.581 > c$ ist, wird die Nullhypothese nicht verworfen.
 \item ???
 \end{enumerate}
+
+\subsection{Likelihood-Quotienten-Test}
+Sei $x_1,x_2,...,x_n$ eine Stichprobe vom Umfang $6$ und poissonverteilt mit dem unbekannten Parameter $\lambda$. Die Hypothesen seien:
+\[
+\begin{array}{rl}
+H_0: & \lambda=\lambda_0=0.5 \\
+H_A: & \lambda=\lambda_A>\lambda_0 \\
+\end{array}
+\]
+Die Teststatistik $T$ wird mit dem Likelihood-Quotienten ermittelt:
+\[
+R(x_1,...,x_6;\lambda_0,\lambda_A) =
+\frac{
+	L(x_1,x_2,...,x_6;\lambda_0)
+}{
+	L(x_1,x_2,...,x_6;\lambda_A)
+} =
+\]
+\[
+\frac{
+	e^{-6\lambda_0}\prod\limits_{i=1}^{6}\frac{\lambda_{0}^{x_i}}{x_i!}
+}{
+	e^{-6\lambda_A}\prod\limits_{i=1}^{6}\frac{\lambda_{A}^{x_i}}{x_i!}
+} =
+e^{-6(\lambda_0-\lambda_A)}\left(\frac{\lambda_0}{\lambda_A}\right)^{\sum\limits_{i=1}^{6}x_i}
+\]
+
+Da $\lambda_0<\lambda_A$ wird $R(x_1,...,x_6;\lambda_0,\lambda_A)$ klein, genau dann, wenn $\sum\limits_{i=1}^{6}x_i$ gross ist. Statt des komplizierten Quotienten wählen wir als Teststatistik also
+\[
+T=\sum\limits_{i=1}^{6}X_i
+\]
 
 \subsection{Erwartungstreuer Schätzer}
 Wir prüfen, ob der Schätzer $T = \frac{1}{n}\sum\limits_{i=1}^{n}X_i$ erwartungstreu ist.
