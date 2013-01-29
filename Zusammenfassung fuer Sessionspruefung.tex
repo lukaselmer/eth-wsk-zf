@@ -237,10 +237,19 @@ F(t_1,...,t_n)=\int\limits_{-\infty}^{t_1}...\int\limits_{-\infty}^{t_n}f(x_1,..
 \]
 
 \subsubsection{Randverteilungen}
-
-Randverteilung im diskreten Fall:
+Seien $X$ und $Y$ Zufallsvariablen mit gemeinsamer Verteilungsfunktion $F_{XY}$, dann ist die Randverteilung $F_X:\mathbb{R}\rightarrow [0,1]$ von $X$ definiert durch
 \[
-P[X=x]=\sum\limits_{i=1}^{n}P[X=x,Y=y_i]=\sum\limits_{i=1}^{n}p(x,y_i)
+F_X=P[X\leq x]=P[X\leq x,Y\leq\infty]=\lim_{y\to\infty}F_{XY}(x,y)
+\]
+
+Für zwei \emph{diskrete} Zufallsvariablen $X$ und $Y$ mit gemeinsamer Gewichtsfunktion $f_{XY}(x,y)$ ist die Gewichtsfunktion der Randverteilung von $X$ gegeben durch
+\[
+f_X=P[X=x]=\sum\limits_{j}P[X=x,Y=y_j]=\sum\limits_{j}f_{XY}(x,y_j)
+\]
+
+Für zwei \emph{stetige} Zufallsvariablen $X$ und $Y$ mit gemeinsamer Dichte $f_{XY}(x,y)$ ist die Dichtefunktion der Randverteilung (Randdichte) von $X$ gegeben durch
+\[
+f_X(x)=\int\limits_{\infty}^{\infty}f_{XY}(x,y)\ dy
 \]
 
 \subsubsection{Bedingte Verteilung}
