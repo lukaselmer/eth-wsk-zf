@@ -1143,7 +1143,7 @@ Die Teststatistik $T$ ist \textbf{t-verteilt} mit \textbf{$n-1$ Freiheitsgraden}
       Verwerfungsbereich $K=(-\infty,-c) \cup (c,\infty)$
 \item $T>t_{n-1,1-\alpha}=c$ \\
       Verwerfungsbereich $K=(c,\infty)$
-\item $T<t_{n-1,1-\alpha}=-t_{n-1,1-\alpha}=c$ \\
+\item $T<-t_{n-1,1-\alpha}=-c$ \\
       Verwerfungsbereich $K=(-\infty,-c)$
 \end{enumerate}
 
@@ -1189,11 +1189,15 @@ S^2=\frac{1}{m+n-2}\left((n-1)S_{X}^{2}+(m-1)S_{Y}^{2}\right)
 T = \frac{\left(\overline{X}_n-\overline{Y}_m\right)-\left(\mu_X-\mu_Y\right)}{S\sqrt{\frac{1}{n}+\frac{1}{m}}}\sim t_{n+m-2}
 \]
 
+\subsubsection{Gepaarter Zweistichproben-Test}
+In diesem Fall können die beiden Stichproben $X_1,X_2,...,X_n\ i.i.d\sim N(\mu_X,\sigma_X^2)$ und $Y_1,Y_2,...,Y_n\ i.i.d\sim N(\mu_Y,\sigma_Y^2)$ durch Definition einer neuen Zufallsvariable $Z=X_i-Y_i$ auf eine Stichprobe vereinfacht werden. Der Test kann dann wie ein normaler z-Test oder t-Test durchgeführt werden, wobei $Z_1,Z_2,...,Z_n\ i.i.d\sim N(\mu_X-\mu_Y,2\sigma^2)$ gilt.
+
 \subsection{Konfidenzbereiche}
 Ein Konfidenzbereich gibt ein Intervall an, in dem sich ein gesuchter Parameter mit sehr hoher Wahrscheinlichkeit befindet.
-
-
-
+\[
+C(X_1,...,X_n)=\left[\overline{X}_n-t_{n-1,1-\frac{\alpha}{2}}\frac{S}{\sqrt{n}},
+\overline{X}_n+t_{n-1,1-\frac{\alpha}{2}}\frac{S}{\sqrt{n}}\right]
+\]
 
 \section{Differentialrechnung}
 
