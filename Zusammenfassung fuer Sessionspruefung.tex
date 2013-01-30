@@ -1219,14 +1219,20 @@ In diesem Fall können die beiden Stichproben $X_1,X_2,...,X_n\ i.i.d\sim N(\mu_
 \subsection{Konfidenzbereiche}
 Ein Konfidenzbereich gibt ein Intervall an, in dem sich ein gesuchter Parameter mit sehr hoher Wahrscheinlichkeit befindet.\\
 
-\textbf{Standardabweichung $\sigma$ bekannt:}
+\textbf{Standardabweichung $\sigma$ \emph{bekannt}:}
 \[
-C(X_1,...,X_n)=\left[\overline{X}_n-\Phi^{-1}(1-\frac{\alpha}{2})\frac{\sigma}{\sqrt{n}},
-+\overline{X}_n+\Phi^{-1}(1-\frac{\alpha}{2})\frac{\sigma}{\sqrt{n}}\right]
+C(X_1,...,X_n)=
 \]
-\textbf{Standardabweichung $\sigma$ nicht bekannt:}
 \[
-C(X_1,...,X_n)=\left[\overline{X}_n-t_{n-1,1-\frac{\alpha}{2}}\frac{S}{\sqrt{n}},
+\left[\overline{X}_n-\Phi^{-1}\left(1-\frac{\alpha}{2}\right)\frac{\sigma}{\sqrt{n}},
+\overline{X}_n+\Phi^{-1}\left(1-\frac{\alpha}{2}\right)\frac{\sigma}{\sqrt{n}}\right]
+\]
+\textbf{Standardabweichung $\sigma$ \emph{nicht bekannt}:}
+\[
+C(X_1,...,X_n)=
+\]
+\[
+\left[\overline{X}_n-t_{n-1,1-\frac{\alpha}{2}}\frac{S}{\sqrt{n}},
 \overline{X}_n+t_{n-1,1-\frac{\alpha}{2}}\frac{S}{\sqrt{n}}\right]
 \]
 
