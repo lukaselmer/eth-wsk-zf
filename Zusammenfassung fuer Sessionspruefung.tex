@@ -1401,15 +1401,39 @@ Ein Waschmittelhersteller bringt 5kg-Packungen in den Umlauf. Die Konsumentensch
 \item ???
 \end{enumerate}
 
-\subsection{Likelihood-Quotienten-Test}
-Sei $x_1,x_2,...,x_n$ eine Stichprobe vom Umfang $6$ und poissonverteilt mit dem unbekannten Parameter $\lambda$. Die Hypothesen seien:
-\[
-\begin{array}{rl}
-H_0: & \lambda=\lambda_0=0.5 \\
-H_A: & \lambda=\lambda_A>\lambda_0 \\
-\end{array}
-\]
-Die Teststatistik $T$ wird mit dem Likelihood-Quotienten ermittelt:
+\subsection{Likelihood-Quotienten-Test (Neyman-Pearson-Lemma}
+Du erhältst den Auftrag, die Anzahl Ausfälle eines Systems zu überprüfen. Nach Angaben des Herstellers sollen erwartungsgemäss 0.5 Ausfälle/h eintreten. Gehe davon aus, dass die Anzahl Ausfälle poisson-verteilt mit unbekanntem Parameter $\lambda$ ist und dass die einzelnen Ausfälle unabhängig voneinander sind. Die Analyse nach 6 Betriebsstunden hat nun folgendes Ergebnis gebracht:
+
+\begin{center}
+  \begin{tabular}{|l|c|c|c|c|c|c|}
+    \hline
+    \textbf{Betriebsstunde i} & 1 & 2 & 3 & 4 & 5 & 6 \\ \hline
+    \textbf{Anz. Ausfälle $X_i$} & 1 & 0 & 1 & 1 & 2 & 1 \\
+    \hline
+  \end{tabular}
+\end{center}
+
+Aufgrund der hohen Anzahl Ausfälle haben wir den Verdacht, dass $\lambda$ grösser als die vom Hersteller angegebenen Anzahl Ausfälle ist. Prüfe anhand eines einseitigen Tests auf dem Niveau 2.5\%, ob tatsächlich $\lambda=0.5$ Ausfälle/h angenommen werden kann. Gib
+\begin{enumerate}
+\item das Modell,
+\item die Nullhypothese,
+\item die Alternativhypothese,
+\item die Teststatistik,
+\item die Verteilung der Teststatistik unter der Nullhypothese,
+\item den Verwerfungsbereich,
+\item den beobachteten Wert der Teststatistik, sowie
+\item den Testentscheid
+\end{enumerate}
+an.
+
+\vspace{10pt}
+
+\textbf{Lösung:}
+\begin{enumerate}
+\item \textbf{Modell:} Unter $P_{\lambda}$ sind die $X_i,\ i.i.d.\sim Pois(\lambda),\ i=1,...,6,\ \lambda$ unbekannt.
+\item \textbf{Nullhypothese:} $H_0:\ \lambda =\lambda_0=0.5$
+\item \textbf{Alternativhypothese:} $H_A:\ \lambda =\lambda_A >\lambda_0$
+\item \textbf{Teststatistik:} $T=\sum\limits_{i=1}^{6}X_i$, denn
 \[
 R(x_1,...,x_6;\lambda_0,\lambda_A) =
 \frac{
@@ -1426,11 +1450,37 @@ R(x_1,...,x_6;\lambda_0,\lambda_A) =
 } =
 e^{-6(\lambda_0-\lambda_A)}\left(\frac{\lambda_0}{\lambda_A}\right)^{\sum\limits_{i=1}^{6}x_i}
 \]
-
 Da $\lambda_0<\lambda_A$ wird $R(x_1,...,x_6;\lambda_0,\lambda_A)$ klein, genau dann, wenn $\sum\limits_{i=1}^{6}x_i$ gross ist. Statt des komplizierten Quotienten wählen wir als Teststatistik also
 \[
 T=\sum\limits_{i=1}^{6}X_i
 \]
+\item \textbf{Verteilung der Teststatistik unter $H_0$:} $T\sim Pois(6\lambda_0)=Pois(3)$
+\item \textbf{Verwerfungsbereich:} Der kritische Bereich "'Quotient klein"' hat die äquivalente Form "'Summe gross"', also ist der Verwerfungsbereich von der Form $K=[k,\infty)$. Um das Signifikanzniveau einzuhalten, muss gelten $P_{\lambda_0}[T\geq k]\leq 2.5\% \Leftrightarrow P_{\lambda_0}[T<k]\geq 97.5\%$:
+
+\begin{center}
+  \begin{tabular}{c|c|c}
+    k & $P_{\lambda_0}[T=k]$ & $P_{\lambda_0}[T\leq k]$ \\ \hline
+    0 & 0.050 & 0.050 \\
+    1 & 0.149 & 0.199 \\
+    2 & 0.224 & 0.423 \\
+    3 & 0.224 & 0.647 \\
+    4 & 0.168 & 0.815 \\
+    5 & 0.101 & 0.916 \\
+    6 & 0.050 & 0.966 \\
+    7 & 0.022 & 0.988 \\
+  \end{tabular}
+\end{center}
+
+Deshalb haben wir als Verwerfungsbereich $=[8,\infty)$.
+\item \textbf{Beobachteter Wert der Teststatistik:} $t=6$
+\item \textbf{Testentscheid:} Da $6$ nicht im Verwerfungsbereich liegt, wird die Nullhypothese \textbf{nicht} verworfen.
+
+
+\end{enumerate}
+
+
+
+
 
 \subsection{Erwartungstreuer Schätzer}
 Wir prüfen, ob der Schätzer $T = \frac{1}{n}\sum\limits_{i=1}^{n}X_i$ erwartungstreu ist.
