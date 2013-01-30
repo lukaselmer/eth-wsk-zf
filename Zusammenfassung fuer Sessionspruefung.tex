@@ -9,7 +9,8 @@
 \usepackage{graphicx}
 \usepackage[cm]{fullpage}
 \usepackage{color}
-\usepackage{framed}
+%\usepackage{framed}
+\usepackage{enumerate}
 
 % Used for indicator function
 \usepackage{bbm}
@@ -1052,6 +1053,8 @@ L(x_1,...,x_n,\vartheta)= \prod \limits_{i=1}^{n} f(x_i,\vartheta)
 \subsubsection{Wichtige Begriffe}
 
 \begin{itemize}
+\item \textbf{Einseitiger Test:} Einen einseitigen Test führt man durch, wenn man wissen will, ob sich ein Wert vergrössert oder verkleinert hat.
+\item \textbf{Zweiseitiger Test:} Einen zweiseitigen Test führt man durch, wenn man lediglich wissen will, ob sich ein Wert verändert hat.
 \item \textbf{Nullhypothese $H_0$:} Die zu prüfende Annahme.
 \item \textbf{Alternativhypothese $H_A$}: Alternative Annahme, falls $H_0$ verworfen werden muss.
 \item \textbf{Signifikanzniveau $\alpha$}: Ist die Wahrscheinlichkeit, dass die Nullhypothese verworfen werden muss (auch Wahrscheinlichkeit für Fehler 1. Art).
@@ -1064,53 +1067,90 @@ L(x_1,...,x_n,\vartheta)= \prod \limits_{i=1}^{n} f(x_i,\vartheta)
 \subsubsection{Allgemeines Vorgehen}
 \begin{enumerate}
 \item Wahl des Modells
-\item Formulieren von $H_0$ und $H_A$.
-\item Signifikanzniveau $\alpha$ festlegen.
-\item Teststatistik T $T$ festlegen.
-\item Bestimmen der kritischen Grenzen.
-\item Konkreter Wert für Teststatistik $T$ berechnen.
+\item Formulieren der Nullhypothese $H_0$
+\item Formulieren der Alternativhypothese $H_A$
+\item Teststatistik $T$ aufstellen
+\item Verteilung der Teststatistik unter der Nullhypothese
+\item Bestimmen des Verwerfungsbereichs
+\item Konkreter Wert für Teststatistik $T$ berechnen
 \item Testentscheidung: $H_0$ beibehalten oder verwerfen?
 \end{enumerate}
 
 \subsubsection{z-Test}
-Der z-Test ist ein Test für den Erwartungswert bei \emph{bekannter} Varianz $\sigma^2$. Es seien also $X_1,X_2,...,X_n \sim N(\vartheta,\sigma^2)\ i.i.d.$. Wir wollen die Nullhypothese $\vartheta=\vartheta_0$ testen.
+Der z-Test ist ein Test für den Erwartungswert bei \emph{bekannter} Varianz $\sigma^2$. Es seien also $X_1,X_2,...,X_n \sim N(\mu,\sigma^2)\ i.i.d.$. Wir wollen die Nullhypothese $\mu=\mu_0$ testen.
 
+\vspace{10pt}
+
+\textbf{Nullhypothese und Alternativhypothese:}
+\begin{enumerate}[a)]
+\item $H_0: \mu=\mu_0$ gegen $H_A:\mu\neq \mu_0$ (zweiseitig)
+\item $H_0: \mu=\mu_0$ gegen $H_A:\mu > \mu_0$ (einseitig)
+\item $H_0: \mu=\mu_0$ gegen $H_A:\mu < \mu_0$ (einseitig)
+\end{enumerate}
+
+\vspace{10pt}
+
+\textbf{Teststatistik:}
 \[
 \begin{array}{ll}
 	\text{Mittelwert $\overline{X}$:} & \overline{X}=\frac{X_1+X_2+...+X_n}{n} \\
-	\text{Teststatistik $T$:} & T = \frac{\overline{X}-\vartheta_0}{\sigma/\sqrt{n}}\sim N(0,1) \\
+	\text{Teststatistik $T$:} & T = \frac{\overline{X}-\mu_0}{\sigma/\sqrt{n}}\sim N(0,1) \\
 \end{array}
 \]
 
-\textbf{Kritischer Bereich:} \\
-Den kritischen Bereich bestimmt man abhängig von der Alternativhypothese $H_A$:
-\begin{itemize}
-\item $\vartheta_A > \vartheta_0$ einseitig: $K = (c_>,\infty)$ mit
-\[
-c_> = (1 - \alpha)\text{-Quantil} = \Phi^{-1}(1 - \alpha)
-\]
-\item $\vartheta_A < \vartheta_0$ einseitig: $K = (-\infty,c_<)$ mit
-\[
-c_< = \alpha\text{-Quantil} = \Phi^{-1}(\alpha)
-\]
-\item $\vartheta_A \neq \vartheta_0$ zweiseitig: $K = (-\infty,c_{\neq}) \cup (c_{\neq},\infty)$ mit
-\[
-c_{\neq} = \left(1-\frac{\alpha}{2}\right)\text{-Quantil} = \Phi^{-1}\left(1-\frac{\alpha}{2}\right)
-\]
-\end{itemize}
+\vspace{10pt}
+
+\textbf{Verwerfungsbereich:}
+\begin{enumerate}[a)]
+\item $|T|>t_{1-\frac{\alpha}{2}}=\Phi^{-1}(1-\frac{\alpha}{2})=c$ \\ 
+      ($P_{\vartheta_0}[|T|]>\Phi^{-1}(1-\frac{\alpha}{2}]=\alpha$) \\
+      Verwerfungsbereich $K=(-\infty,-c) \cup (c,\infty)$
+\item $T>\Phi^{-1}(1-\alpha)=c$ \\
+      Verwerfungsbereich $K=(c,\infty)$
+\item $T<t_{\alpha}=-t_{1-\alpha}=-\Phi^{-1}(1-\alpha)=c$ \\
+      Verwerfungsbereich $K=(-\infty,-c)$
+\end{enumerate}
 
 \subsubsection{t-Test}
-Der t-Test ist ein Test für den Erwartungswert bei \emph{unbekannter Varianz} $\sigma^2$. Es seien also $X_1,X_2,...,X_n \sim N(\vartheta,\sigma^2) i.i.d.$. Wir wollen die Nullhypothese $\vartheta=\vartheta_0$ testen.
+Der t-Test ist ein Test für den Erwartungswert bei \emph{unbekannter Varianz} $\sigma^2$. Es seien also $X_1,X_2,...,X_n \sim N(\mu,\sigma^2) i.i.d.$. Wir wollen die Nullhypothese $\mu=\mu_0$ testen.
 
+\vspace{10pt}
+
+\textbf{Nullhypothese und Alternativhypothese:}
+\begin{enumerate}[a)]
+\item $H_0: \mu=\mu_0$ gegen $H_A:\mu\neq \mu_0$ (zweiseitig)
+\item $H_0: \mu=\mu_0$ gegen $H_A:\mu > \mu_0$ (einseitig)
+\item $H_0: \mu=\mu_0$ gegen $H_A:\mu < \mu_0$ (einseitig)
+\end{enumerate}
+
+\vspace{10pt}
+
+\textbf{Teststatistik:}
 \[
 \begin{array}{ll}
 	\text{Mittelwert $\overline{X}$:} & \overline{X}=\frac{X_1+X_2+...+X_n}{n} \\
 	\text{Schätzfunktion für $S^2$:} & S^2 = \frac{1}{n-1}\cdot \sum\limits_{i=1}^{n}(X_i - \overline{X})^2 \\
-	\text{Teststatistik $T$:} & T = \frac{\overline{X}-\vartheta_0}{S/\sqrt{n}}\sim t_{n-1} \\
+	\text{Teststatistik $T$:} & T = \frac{\overline{X}-\mu_0}{S/\sqrt{n}}\sim t_{n-1} \\
 \end{array}
 \]
 
-Die Teststatistik $T$ ist \textbf{t-verteilt} mit \textbf{$n-1$ Freiheitsgraden}. Der kritische Bereich lässt sich analog zum z-Test mit den Quantilen der $t_{n-1}$-Verteilung bestimmen.
+Die Teststatistik $T$ ist \textbf{t-verteilt} mit \textbf{$n-1$ Freiheitsgraden}.
+
+\vspace{10pt}
+
+\textbf{Verwerfungsbereich:}
+\begin{enumerate}[a)]
+\item $|T|>t_{n-1,1-\frac{\alpha}{2}}=c$ \\
+      Verwerfungsbereich $K=(-\infty,-c) \cup (c,\infty)$
+\item $T>t_{n-1,1-\alpha}=c$ \\
+      Verwerfungsbereich $K=(c,\infty)$
+\item $T<t_{n-1,1-\alpha}=-t_{n-1,1-\alpha}=c$ \\
+      Verwerfungsbereich $K=(-\infty,-c)$
+\end{enumerate}
+
+
+
+
 
 \subsubsection{Likelihood-Quotienten-Test}
 Der Likelihood-Quotienten-Test kann man verwenden, um eine geeignete Teststatistik $T$ zu erhalten. 
