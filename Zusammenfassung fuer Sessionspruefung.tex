@@ -9,7 +9,6 @@
 \usepackage{graphicx}
 \usepackage[cm]{fullpage}
 \usepackage{color}
-%\usepackage{framed}
 \usepackage{enumerate}
 
 % Used for indicator function
@@ -1440,6 +1439,47 @@ Ein Waschmittelhersteller bringt 5kg-Packungen in den Umlauf. Die Konsumentensch
 \item $T_1 = \frac{\overline{X}-\mu_0}{S/\sqrt{n}} = -1.581$. Wir ermitteln das t-Quantil für $n-1 = 24$ Freiheitsgrade und $t^{-1}(\alpha) = t^{-1}(0.05) = t^{-1}(0.95) = 1.711$. Somit erhalten wir eine kritische Grenze von $c = -1.711$. Weil $T_1 = -1.581 > c$ ist, wird die Nullhypothese nicht verworfen.
 \item ???
 \end{enumerate}
+
+\subsection{P-Wert berechnen}
+Für einen t-Test oder einen z-Test kann der P-Wert wie folgt berechnet werden:
+
+\vspace{10pt}
+
+\textbf{P-Wert bei zweiseitigem Test:} \\
+Beispiel mit $c=3.43$ als Grenze des Verwerfungsbereichs:
+\[
+\begin{array}{rcl}
+	P_{H_0}[|T|>3.43] & = & 2\cdot P_{H_0}[T>3.43] \\
+	& = & 2\cdot (1-P_{H_0}[T\leq 3.43] \\
+	& = & 2\cdot (1-\Phi(3.43)) \\
+	& = & 2\cdot (1-0.999698) \\	
+	& \approx & 0.0006
+\end{array}
+\]
+
+\vspace{10pt}
+
+\textbf{P-Wert bei einseitigem Test (rechts):} \\
+Beispiel mit $c=3.43$ als Grenze des Verwerfungsbereichs:
+\[
+\begin{array}{rcl}
+	P_{H_0}[T>3.43] & = & (1-P_{H_0}[T\leq 3.43] \\
+	& = & (1-\Phi(3.43)) \\
+	& = & (1-0.999698) \\	
+	& \approx & 0.0003
+\end{array}
+\]
+
+\vspace{10pt}
+
+\textbf{P-Wert bei einseitigem Test (links):} \\
+Beispiel mit $c=3.43$ als Grenze des Verwerfungsbereichs:
+\[
+\begin{array}{rcl}
+	P_{H_0}[T<3.43] & = & \Phi(3.43) \\
+	& \approx & 0.999698) \\
+\end{array}
+\]
 
 \subsection{Likelihood-Quotienten-Test (Neyman-Pearson-Lemma}
 Du erhältst den Auftrag, die Anzahl Ausfälle eines Systems zu überprüfen. Nach Angaben des Herstellers sollen erwartungsgemäss 0.5 Ausfälle/h eintreten. Gehe davon aus, dass die Anzahl Ausfälle poisson-verteilt mit unbekanntem Parameter $\lambda$ ist und dass die einzelnen Ausfälle unabhängig voneinander sind. Die Analyse nach 6 Betriebsstunden hat nun folgendes Ergebnis gebracht:
