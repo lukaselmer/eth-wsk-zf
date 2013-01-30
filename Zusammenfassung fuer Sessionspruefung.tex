@@ -1170,23 +1170,47 @@ Ist dieser Quotient klein, sind die Beobachtungen für die Alternativhypothese d
 
 \subsubsection{Ungepaarter Zweistichproben-z-Test}
 Seien $X_1,X_2,...,X_n \sim N(\mu_X,\sigma^2)$ und $Y_1,Y_2,...,Y_m \sim N(\mu_Y,\sigma^2)$ zwei Stichproben mit $m = n$ oder $m \neq n$. Die Erwartungswerte $\mu_X$ und $\mu_Y$ seien unbekannt, die Varianz $\sigma^2$ sei \emph{bekannt}. Der Test kann wie ein normaler z-Test durchgeführt werden, als Teststatistik $T$ wird jedoch folgende Formel verwendet:
+
+\vspace{10pt}
+
+Falls $m\neq n$:
+
 \[
 T = \frac{\left(\overline{X}_n-\overline{Y}_m\right)-\left(\mu_X-\mu_Y\right)}{\sigma\sqrt{\frac{1}{n}+\frac{1}{m}}}\sim N(0,1)
 \]
 
+Falls $m=n$:
+
+\[
+T = \frac{\left(\overline{X}_n-\overline{Y}_m\right)-\left(\mu_X-\mu_Y\right)}{\sigma\sqrt{\frac{2}{n}}}\sim N(0,1)
+\]
+
 \subsubsection{Ungepaarter Zweichstichproben-t-Test}
 Seien $X_1,X_2,...,X_n \sim N(\mu_X,\sigma^2)$ und $Y_1,Y_2,...,Y_m \sim N(\mu_Y,\sigma^2)$ zwei Stichproben mit $m = n$ oder $m \neq n$. Die Erwartungswerte $\mu_X$ und $\mu_Y$ seien unbekannt, die Varianz $\sigma^2$ sei ebenfalls \emph{unbekannt}. Der Test kann wie ein normaler t-Test durchgeführt werden, als Teststatistik $T$ wird jedoch folgende Formel verwendet:
+
 \[
 S_{X}^{2}=\frac{1}{n-1}\sum\limits_{i=1}^{n}\left(X_i-\overline{X}_n\right)^2
 \]
 \[
 S_{Y}^{2}=\frac{1}{m-1}\sum\limits_{j=1}^{m}\left(Y_j-\overline{Y}_m\right)^2
 \]
+
+Falls $m\neq n$:
+
 \[
 S^2=\frac{1}{m+n-2}\left((n-1)S_{X}^{2}+(m-1)S_{Y}^{2}\right)
 \]
 \[
 T = \frac{\left(\overline{X}_n-\overline{Y}_m\right)-\left(\mu_X-\mu_Y\right)}{S\sqrt{\frac{1}{n}+\frac{1}{m}}}\sim t_{n+m-2}
+\]
+
+Falls $m=n$:
+
+\[
+S^2=\frac{1}{2(n-1)}(n-1)\left(S_{X}^{2}+S_{Y}^{2}\right)
+\]
+\[
+T = \frac{\left(\overline{X}_n-\overline{Y}_m\right)-\left(\mu_X-\mu_Y\right)}{S\sqrt{\frac{2}{n}}}\sim t_{2n-2}
 \]
 
 \subsubsection{Gepaarter Zweistichproben-Test}
