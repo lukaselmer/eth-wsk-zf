@@ -272,15 +272,47 @@ f_{X|Y}(x|y)=\frac{f_{XY}(x,y)}{f_Y(y)}
 ...
 
 \subsection{Funktionen stetiger Zufallsvariablen}
+\textbf{Fall \boldmath$Y=aX+b$:} \\
+Verteilungsfunktion:
 \[
 \begin{array}{rcl}
-	Y=aX+b & = & F_Y(t)=P[Y\leq t]=P[aX+b\leq t] \\
+	F_Y(t) & = & P[Y\leq t]=P[aX+b\leq t]= \\
 	& = & P[X\leq \frac{t-b}{a}]=F_X(\frac{t-b}{a}) \\
-	Y=X^2 & = & F_Y(t)=P[Y\leq t]=P[X^2\leq t] \\
-	& = & P[-\sqrt{t}\leq t\leq\sqrt{t}]=F_X(\sqrt{t})-F_X(-\sqrt{t}) \\
-	Y=\frac{1}{X} & = & F_Y(t)=P[Y\leq t]=P[\frac{1}{X}\leq t] \\
-	& = & P[X\geq\frac{1}{t}]=1-P[X\leq\frac{1}{t}]=1-F_X(\frac{1}{t})
 \end{array}
+\]
+
+Dichtefunktion:
+
+\[
+f_Y(t)=\frac{1}{a}f_X\left(\frac{t-b}{a}\right)
+\]
+
+\textbf{Fall \boldmath$Y=X^2$:} \\
+Verteilungsfunktion:
+\[
+\begin{array}{rcl}
+	F_Y(t) & = & P[Y\leq t]=P[X^2\leq t]=P[-\sqrt{t}\leq t\leq\sqrt{t}] \\
+	& = & F_X(\sqrt{t})-F_X(-\sqrt{t}) \\
+\end{array}
+\]
+
+Dichtefunktion:
+\[
+f_Y(t)=\frac{1}{\sqrt{2\pi}}t^{-\frac{1}{2}}e^{-\frac{1}{2}t}
+\]
+
+\textbf{Fall \boldmath$Y=\frac{1}{X}$:} \\
+Verteilungsfunktion:
+\[
+\begin{array}{rcl}
+	F_Y(t) & = & P[Y\leq t]=P[\frac{1}{X}\leq t] \\
+	& = & P[X\geq\frac{1}{t}]=1-P[X\leq\frac{1}{t}]=1-F_X(\frac{1}{t}) \\
+\end{array}
+\]
+
+Dichtefunktion:
+\[
+f_Y(t)=\frac{1}{t^2}f_X\left(\frac{1}{t}\right)
 \]
 
 \subsection{Chebyshev-Ungleichung}
