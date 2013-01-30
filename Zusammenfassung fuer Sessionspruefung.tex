@@ -1193,7 +1193,14 @@ T = \frac{\left(\overline{X}_n-\overline{Y}_m\right)-\left(\mu_X-\mu_Y\right)}{S
 In diesem Fall können die beiden Stichproben $X_1,X_2,...,X_n\ i.i.d\sim N(\mu_X,\sigma_X^2)$ und $Y_1,Y_2,...,Y_n\ i.i.d\sim N(\mu_Y,\sigma_Y^2)$ durch Definition einer neuen Zufallsvariable $Z=X_i-Y_i$ auf eine Stichprobe vereinfacht werden. Der Test kann dann wie ein normaler z-Test oder t-Test durchgeführt werden, wobei $Z_1,Z_2,...,Z_n\ i.i.d\sim N(\mu_X-\mu_Y,2\sigma^2)$ gilt.
 
 \subsection{Konfidenzbereiche}
-Ein Konfidenzbereich gibt ein Intervall an, in dem sich ein gesuchter Parameter mit sehr hoher Wahrscheinlichkeit befindet.
+Ein Konfidenzbereich gibt ein Intervall an, in dem sich ein gesuchter Parameter mit sehr hoher Wahrscheinlichkeit befindet.\\
+
+\textbf{Standardabweichung $\sigma$ bekannt:}
+\[
+C(X_1,...,X_n)=\left[\overline{X}_n-\Phi^{-1}(1-\frac{\alpha}{2})\frac{\sigma}{\sqrt{n}},
++\overline{X}_n+\Phi^{-1}(1-\frac{\alpha}{2})\frac{\sigma}{\sqrt{n}}\right]
+\]
+\textbf{Standardabweichung $\sigma$ nicht bekannt:}
 \[
 C(X_1,...,X_n)=\left[\overline{X}_n-t_{n-1,1-\frac{\alpha}{2}}\frac{S}{\sqrt{n}},
 \overline{X}_n+t_{n-1,1-\frac{\alpha}{2}}\frac{S}{\sqrt{n}}\right]
